@@ -13,6 +13,7 @@ export default {
 		},
 		extend: {
 			width: {
+				'128': '128rem',
 				'550': '550px',
 				'oppo550': 'calc(100% - 550px)'
 			}
