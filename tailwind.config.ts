@@ -9,12 +9,19 @@ export default {
 			ecOrangeHighlight: '#ff887d',
 			ecIconColor: '#f0f0f0',
 
-			cardBg: '#f1f5f9'
+			cardBg: '#f1f5f9',
+
+			pillBg: '#c0c0c0'
 		},
 		extend: {
+			maxWidth: {
+				'32r': '32rem',
+				'640': '640px'
+			},
 			width: {
-				'128': '128rem',
+				'32r': '32rem',
 				'550': '550px',
+				'640': '640px',
 				'oppo550': 'calc(100% - 550px)'
 			}
 		}

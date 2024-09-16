@@ -9,6 +9,13 @@
   h2 {
     @apply text-xl font-semibold;
   }
+  h3 {
+    @apply text-lg font-semibold;
+  }
+
+  .tagline {
+    @apply text-xl font-semibold;
+  }
 
   .link {
     @apply underline text-ecOrange;
