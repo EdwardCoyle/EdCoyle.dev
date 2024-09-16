@@ -1,0 +1,20 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  h1 {
+    @apply text-2xl font-semibold;
+  }
+  h2 {
+    @apply text-xl font-semibold;
+  }
+
+  .link {
+    @apply underline text-ecOrange;
+  }
+  .link:hover,
+  .link.hover {
+    @apply text-ecOrangeHighlight;
+  }
+}
