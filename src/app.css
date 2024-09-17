@@ -21,7 +21,7 @@
   }
 
   .link {
-    @apply underline text-ecOrange;
+    @apply underline text-ecOrange transition-colors;
   }
   .link:hover,
   .link.hover {

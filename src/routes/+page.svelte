@@ -13,6 +13,8 @@
 	import Triangle from '../components/Triangle.svelte';
 	import BulletList from '../components/BulletList.svelte';
 	import BulletListItem from '../components/BulletListItem.svelte';
+	import Github from '../components/icons/Github.svelte';
+	import LinkedIn from '../components/icons/LinkedIn.svelte';
 </script>
 
 <div id="content" class="flex flex-col lg:flex-row h-full w-full overflow-auto lg:overflow-hidden">
@@ -32,8 +34,8 @@
                 <li class="flex flex-row gap-2 items-center"><Triangle></Triangle><a class="link" href="#projects">Past Projects</a></li>
             </ul>
             <div class="lg:mt-auto flex mb-8 lg:mb-0">
-                <a href="https://github.com/EdwardCoyle"><img src={iconGithub} alt="Github" /></a>
-                <a href="https://linkedin.com/in/edwardcoylejr"><img src={iconLinkedIn} alt="LinkedIn" /></a>
+                <a class="link" href="https://github.com/EdwardCoyle"><Github/></a>
+                <a class="link" href="https://linkedin.com/in/edwardcoylejr"><LinkedIn/></a>
             </div>
         </div>
     </div>
