@@ -5,9 +5,14 @@
 
     import thumbnailIdsWeb from '$lib/img/thumbnails/ids-enterprise-wc.png';
     import thumbnailIdsOld from '$lib/img/thumbnails/ids-enterprise.png';
+	import ContentGrid from '../components/ContentGrid.svelte';
+	import ContentGridMain from '../components/ContentGridMain.svelte';
+    import ContentGridAside from '../components/ContentGridAside.svelte';
 
 	import Pill from '../components/Pill.svelte';
 	import Triangle from '../components/Triangle.svelte';
+	import BulletList from '../components/BulletList.svelte';
+	import BulletListItem from '../components/BulletListItem.svelte';
 </script>
 
 <div id="content" class="flex flex-col lg:flex-row h-full w-full overflow-auto lg:overflow-hidden">
@@ -15,11 +20,11 @@
         <div class="flex flex-col h-full p-8">
             <header class="mb-8">
                 <h1>
-                    <img class="max-w-32r lg:max-w-32r" src={logo} alt="Edward Coyle. Developer. Designer. Animator." />
+                    <img class="max-w-32r" src={logo} alt="Edward Coyle. Developer. Designer. Animator." />
                 </h1>
             </header>
-            <div class="mb-8 max-w-96">
-                <p class="tagline">I am a seasoned front-end developer who loves to design fun and accessible experiences</p>
+            <div class="mb-8 max-w-32r">
+                <p class="tagline">I am a seasoned front-end developer who loves designing fun and accessible experiences</p>
             </div>
             <ul class="mb-8 max-lg:hidden">
                 <li class="flex flex-row gap-2 items-center"><Triangle></Triangle><a class="link" href="#about">About Me</a></li>
@@ -46,12 +51,12 @@
             <!-- Work Experience -->
             <section class="m-4 p-4 min-h-96 max-w-640 lg:w-640 bg-cardBg" id="work" aria-label="Work Experience">
                 <h2 class="mb-8">Work Experience</h2>
-                <div class="grid group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                    <!-- Schneider -->
-                    <div class="dates z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2">
+                <!-- Schneider -->
+                <ContentGrid>      
+                    <ContentGridAside>
                         Jan 2024 - present
-                    </div>
-                    <div class="details z-10 sm:col-span-6">
+                    </ContentGridAside>  
+                    <ContentGridMain>
                         <h3>Schneider Electric</h3>
                         <h4>Angular Software Engineer</h4>
                         <p class="text-sm py-4">
@@ -67,13 +72,13 @@
                             <Pill>Figma</Pill>
                             <Pill>JIRA</Pill>
                         </ul>
-                    </div>
+                    </ContentGridMain>
 
                     <!-- Infor -->
-                    <div class="dates z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2">
+                    <ContentGridAside>
                         Aug 2014 - Jan 2024
-                    </div>
-                    <div class="details z-10 sm:col-span-6">
+                    </ContentGridAside>
+                    <ContentGridMain>
                         <h3>Infor, Inc.</h3>
                         <h4>Senior Software Engineer @ Infor Design System (IDS)</h4>
                         <p class="text-sm py-4">
@@ -90,13 +95,13 @@
                             <Pill>Sveltekit</Pill>
                             <Pill>Figma</Pill>
                         </ul>
-                    </div>
+                    </ContentGridMain>
 
                     <!-- Connexin -->
-                    <div class="dates z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2">
+                    <ContentGridAside>
                         Jun 2010 - Aug 2014
-                    </div>
-                    <div class="details z-10 sm:col-span-6">
+                    </ContentGridAside>
+                    <ContentGridMain>
                         <h3>Connexin Software, Inc.</h3>
                         <h4>Software Developer @ UX Team</h4>
                         <p class="text-sm py-4">
@@ -112,49 +117,43 @@
                             <Pill>Java</Pill>
                             <Pill>Adobe CS</Pill>
                         </ul>
-                    </div>
-                </div>
+                    </ContentGridMain>
+                </ContentGrid>
             </section>
 
             <!-- Past Projects -->
             <section class="m-4 p-4 min-h-96 max-w-640 lg:w-640 bg-cardBg" id="projects" aria-label="Projects">
                 <h2 class="mb-8">Past Projects</h2>
 
-                <div class="grid group relatived pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4">
+                <ContentGrid>
                     <!-- IDS Web Components -->
-                    <div class="dates z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2">
+                    <ContentGridAside>
                         <img src={thumbnailIdsWeb} alt="Thumbnail for IDS Web Components">
-                    </div>
-                    <div class="details z-10 sm:col-span-6">
+                    </ContentGridAside>
+                    <ContentGridMain>
                         <h3>Web Component Library</h3>
                         <h4>Infor Design System</h4>
                         <p class="text-sm py-4">I contributed to the architecture powering the new Web Component library, as well as the components themselves, utilized by modern Infor applications. I'm also one of the gatekeepers that helps accept/build new features based on posted Github issues. The live examples below include some components I've been responsible for building and maintaining.</p>
-                        <ul>
-                            <li class="project-link text-sm flex flex-row gap-2 items-center">
-                                <Triangle></Triangle>
+                        <BulletList>
+                            <BulletListItem>
                                 <a class="link" title="Live Examples (Main Page)" href="https://main.wc.design.infor.com">Live Examples (Main Page)</a> 
-                            </li>
-                            <li class="project-link text-sm flex flex-row gap-2 items-center">
-                                <Triangle></Triangle>
+                            </BulletListItem>
+                            <BulletListItem>
                                 <a class="link" title="Live Example - IDS Popup Menu Component" href="https://main.wc.design.infor.com/ids-popup-menu">Live Example - IDS Popup Menu Component</a>
-                            </li>
-                            <li class="project-link text-sm flex flex-row gap-2 items-center">
-                                <Triangle></Triangle>
+                            </BulletListItem>
+                            <BulletListItem>
                                 <a class="link" title="Live Example - IDS Module Nav Component" href="https://main.wc.design.infor.com/ids-module-nav">Live Example - IDS Module Nav Component</a>
-                            </li>
-                            <li class="project-link text-sm flex flex-row gap-2 items-center">
-                                <Triangle></Triangle>
+                            </BulletListItem>
+                            <BulletListItem>
                                 <a class="link" title="Live Example - IDS Toolbar Component" href="https://main.wc.design.infor.com/ids-toolbar">Live Example - IDS Toolbar Component</a>
-                            </li>
-                            <li class="project-link text-sm flex flex-row gap-2 items-center">
-                                <Triangle></Triangle>
+                            </BulletListItem>
+                            <BulletListItem>
                                 <a class="link" title="Github Repo" href="https://github.com/infor-design/enterprise-wc">Github Repo</a>
-                            </li>
-                            <li class="project-link text-sm flex flex-row gap-2 items-center">
-                                <Triangle></Triangle>
+                            </BulletListItem>
+                            <BulletListItem>
                                 <a class="link" title="Github Repo (Front-end Framework Examples)" href="https://github.com/infor-design/enterprise-wc-examples">Github Repo (Front-end Framework Examples)</a>
-                            </li>
-                        </ul>
+                            </BulletListItem>
+                        </BulletList>
                         
                         <ul class="tag-list mt-2 flex flex-wrap">
                             <Pill>TypeScript</Pill>
@@ -162,42 +161,36 @@
                             <Pill>SASS</Pill>
                             <Pill>Node.js</Pill>
                         </ul>
-                    </div>
+                    </ContentGridMain>
 
                     <!-- Old IDS -->
-                    <div class="dates z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2">
+                    <ContentGridAside>
                         <img class="border-1" src={thumbnailIdsOld} alt="Thumbnail for IDS Web Components">
-                    </div>
-                    <div class="details z-10 sm:col-span-6">
+                    </ContentGridAside>
+                    <ContentGridMain>
                         <h3>jQuery Component Library</h3>
                         <h4>Infor Design System</h4>
                         <p class="text-sm py-4">I built from scratch many of the jQuery components used in legacy Infor applications. I've also maintained the components for the duration of my time at Infor, and helped bring this particular library from closed to open-source on Github. The live examples below include some components I've been responsible for building and maintaining.</p>
-                        <ul>
-                            <li class="project-link text-sm flex flex-row gap-2 items-center">
-                                <Triangle></Triangle>
+                        <BulletList>
+                            <BulletListItem>
                                 <a class="link" title="Official Documenation" href="https://design.infor.com/">Official Documentation</a> 
-                            </li>
-                            <li class="project-link text-sm flex flex-row gap-2 items-center">
-                                <Triangle></Triangle>
+                            </BulletListItem>
+                            <BulletListItem>
                                 <a class="link" title="Live Example - Main Page" href="https://main-enterprise.demo.design.infor.com/">Live Examples - Main Page</a>
-                            </li>
-                            <li class="project-link text-sm flex flex-row gap-2 items-center">
-                                <Triangle></Triangle>
+                            </BulletListItem>
+                            <BulletListItem>
                                 <a class="link" title="Live Example - App Menu Component" href="https://main-enterprise.demo.design.infor.com/components/applicationmenu/example-personalized-roles.html">Live Example - App Menu Component</a>
-                            </li>
-                            <li class="project-link text-sm flex flex-row gap-2 items-center">
-                                <Triangle></Triangle>
+                            </BulletListItem>
+                            <BulletListItem>
                                 <a class="link" title="Live Example - Header Component" href="https://main-enterprise.demo.design.infor.com/components/header/example-flex-toolbar.html">Live Example - Header Component</a>
-                            </li>
-                            <li class="project-link text-sm flex flex-row gap-2 items-center">
-                                <Triangle></Triangle>
+                            </BulletListItem>
+                            <BulletListItem>
                                 <a class="link" title="Github Repo (Enterprise Components)" href="https://github.com/infor-design/enterprise">Github Repo (Enterprise Components)</a>
-                            </li>
-                            <li class="project-link text-sm flex flex-row gap-2 items-center">
-                                <Triangle></Triangle>
+                            </BulletListItem>
+                            <BulletListItem>
                                 <a class="link" title="Github Repo (Front-end Framework Examples)" href="https://github.com/infor-design/enterprise-ng">Github Repo (Angular Components)</a>
-                            </li>
-                        </ul>
+                            </BulletListItem>
+                        </BulletList>
                         
                         <ul class="tag-list mt-2 flex flex-wrap">
                             <Pill>JavaScript</Pill>
@@ -205,8 +198,8 @@
                             <Pill>SASS</Pill>
                             <Pill>Node.js</Pill>
                         </ul>
-                    </div>
-                </div>
+                    </ContentGridMain>
+                </ContentGrid>
             </section>
         </div>
     </main>

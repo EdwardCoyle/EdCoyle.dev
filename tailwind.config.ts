@@ -8,10 +8,12 @@ export default {
 			ecOrange: '#e74b3e',
 			ecOrangeHighlight: '#ff887d',
 			ecIconColor: '#f0f0f0',
+			
+			bulletColor: '#818589',
 
 			cardBg: '#f1f5f9',
 
-			pillBg: '#c0c0c0'
+			pillBg: '#c1c5c9',
 		},
 		extend: {
 			maxWidth: {
