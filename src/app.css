@@ -1,8 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&family=Fira+Code:wght@300;400;600&family=Raleway:wght@100;300;400;600;700;900;&display=swap');
+
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
 @layer base {
+  :root {
+    --font-family-serif: "Aleo", 'Times New Roman', serif;
+    --font-family-sans-serif: 'Raleway', Arial, Helvetica, sans-serif;
+    --font-family-code: 'Fira Code', monospace;
+    --font-family-input: Arial, Helvetica, sans-serif;
+  }
+
+  body {
+    @apply font-normal font-sans;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-family-sans-serif);
+  }
+
   h1 {
     @apply text-2xl font-semibold;
   }
@@ -14,6 +34,16 @@
   }
   h4 {
     @apply text-base font-semibold;
+  }
+
+  pre,
+  code {
+    font-family: var(--font-family-code);
+  }
+
+  input,
+  textarea {
+    font-family: var(--font-family-input);
   }
 
   .tagline {

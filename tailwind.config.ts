@@ -25,16 +25,23 @@ export default {
 			maxWidth: {
 				'32r': '32rem',
 				'200': '200px',
-				'640': '640px'
+				'640': '640px',
+				'680': '680px'
 			},
 			width: {
 				'32r': '32rem',
 				'200': '200px',
 				'550': '550px',
 				'640': '640px',
+				'680': '680px',
 				'oppo550': 'calc(100% - 550px)'
 			}
-		}
+		},
+		fontFamily: {
+			'serif': ['Aleo', 'Times New Roman', 'ui-sans-serif', 'system-ui'],
+			'sans': ['Raleway', 'Arial', 'Helvetica', 'ui-serif'],
+			'mono': ['Fira Code', 'ui-monospace', 'SFMono-Regular'],
+		  }
 	},
 
 	plugins: [require('@tailwindcss/typography')]
