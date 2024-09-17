@@ -147,7 +147,7 @@
                         <img src={thumbnailIdsWeb} alt="Thumbnail for IDS Web Components">
                     </ContentGridAside>
                     <ContentGridMain>
-                        <h3><a href="#projects-ids-wc">Web Component Library</a></h3>
+                        <h3><a href="#project-ids-wc">Web Component Library</a></h3>
                         <h4>Infor Design System</h4>
                         <p class="text-sm py-4">I contributed to the architecture powering the new Web Component library, as well as the components themselves, utilized by modern Infor applications. I'm also one of the gatekeepers that helps accept/build new features based on posted Github issues. The live examples below include some components I've been responsible for building and maintaining.</p>
                         <BulletList>
@@ -184,7 +184,7 @@
                         <img class="border-1" src={thumbnailIdsOld} alt="Thumbnail for IDS Web Components">
                     </ContentGridAside>
                     <ContentGridMain>
-                        <h3><a href="#projects-ids-ep">jQuery Component Library</a></h3>
+                        <h3><a href="#project-ids-ep">jQuery Component Library</a></h3>
                         <h4>Infor Design System</h4>
                         <p class="text-sm py-4">I built from scratch many of the jQuery components used in legacy Infor applications. I've also maintained the components for the duration of my time at Infor, and helped bring this particular library from closed to open-source on Github. The live examples below include some components I've been responsible for building and maintaining.</p>
                         <BulletList>
@@ -221,7 +221,7 @@
                         <EmptyAsideImage>No Screenshot</EmptyAsideImage>
                     </ContentGridAside>
                     <ContentGridMain>
-                        <h3><a href="#projects-op-patient-portal">Office Practicum Patient Portal</a></h3>
+                        <h3><a href="#project-op-patient-portal">Office Practicum Patient Portal</a></h3>
                         <h4>Connexin Software</h4>
                         <p class="text-sm py-4">
                             I worked on customer-facing portions of the OP Patient Portal between 2010 and 2014.  This included writing HTML/JS/CSS front-ends, and sometimes working on the Java/Liferay/Tomcat backend, for many custom-branded patient portals delivered to Pediatrician clients.
@@ -235,10 +235,10 @@
 
                     <!-- Find The Lucky Spot -->
                     <ContentGridAside>
-                        <img class="border-1" src={thumbnailFTLS} alt="Thumbnail for Find The Lucky Spot">
+                        <img class="border-1 max-h-60" src={thumbnailFTLS} alt="Thumbnail for Find The Lucky Spot">
                     </ContentGridAside>
                     <ContentGridMain>
-                        <h3>Find The Lucky Spot (iOS)</h3>
+                        <h3><a href="#project-lucky-spot">Find The Lucky Spot (iOS)</a></h3>
                         <h4>The Games Page</h4>
                         <p class="text-sm py-4">
                             I worked on pixel art, hand-drawn images, and other art assets for this iOS game, originally released on iOS in 2012 and on the web in 2009 from <a href="https://thegamespage.com">The Games Page</a>.
@@ -252,7 +252,7 @@
 
                     <!-- Diver Dan -->
                     <ContentGridAside>
-                        <img class="border-1" src={thumbnailDDan} alt="Thumbnail for Diver Dan">
+                        <img class="border-1 max-h-60" src={thumbnailDDan} alt="Thumbnail for Diver Dan">
                     </ContentGridAside>
                     <ContentGridMain>
                         <h3><a href="#project-diver-dan">Diver Dan (iOS)</a></h3>
@@ -272,7 +272,7 @@
 
                     <!-- Hurdler -->
                     <ContentGridAside>
-                        <img class="border-1" src={thumbnailHurdler} alt="Thumbnail for Hurdler">
+                        <img class="border-1 max-h-60" src={thumbnailHurdler} alt="Thumbnail for Hurdler">
                     </ContentGridAside>
                     <ContentGridMain>
                         <h3><a href="#project-hurdler">Hurdler (iOS)</a></h3>
@@ -288,7 +288,7 @@
 
                     <!-- TGP -->
                     <ContentGridAside>
-                        <img class="border-1" src={thumbnailTGP} alt="Thumbnail for TGP">
+                        <img class="border-1 max-h-60" src={thumbnailTGP} alt="Thumbnail for TGP">
                     </ContentGridAside>
                     <ContentGridMain>
                         <h3><a href="#project-tgp">The Games Page</a></h3>
