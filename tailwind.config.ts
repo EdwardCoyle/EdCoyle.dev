@@ -13,15 +13,23 @@ export default {
 
 			cardBg: '#f1f5f9',
 
-			pillBg: '#c1c5c9',
+			pillBg: '#e1e5e9',
 		},
 		extend: {
+			height: {
+				'200': '200px'
+			},
+			maxHeight: {
+				'200': '200px'
+			},
 			maxWidth: {
 				'32r': '32rem',
+				'200': '200px',
 				'640': '640px'
 			},
 			width: {
 				'32r': '32rem',
+				'200': '200px',
 				'550': '550px',
 				'640': '640px',
 				'oppo550': 'calc(100% - 550px)'
