@@ -156,7 +156,27 @@
 
             <!-- Past Projects -->
             <section id="projects" aria-label="Projects">
-                <AccentHeader>Past Projects</AccentHeader>    
+                <AccentHeader>Past Projects</AccentHeader>
+                <ContentCard>
+                    <ContentGrid>
+                        <!-- OP Patient Portal -->
+                        <ContentGridAside>
+                            <EmptyAsideImage>No Screenshot</EmptyAsideImage>
+                        </ContentGridAside>
+                        <ContentGridMain>
+                            <h3 class="font-bold"><a href="#project-op-patient-portal">This Website!</a></h3>
+                            <p class="text-sm py-4">
+                                I built this website with love... and also <a href="https://kit.svelte.dev/" class="link">Sveltekit</a> and <a href="https://tailwindcss.com/" class="link">Tailwind CSS</a>. 
+                            </p>
+                            <PillList>
+                                <Pill>Sveltekit</Pill>
+                                <Pill>TailwindCSS</Pill>
+                                <Pill>Node.js</Pill>
+                            </PillList>
+                        </ContentGridMain>
+                    </ContentGrid>
+                </ContentCard>
+
                 <ContentCard>
                     <ContentGrid>
                         <!-- IDS Web Components -->
