@@ -26,6 +26,7 @@
 	import PillList from '../components/PillList.svelte';
 	import AccentHeader from '../components/AccentHeader.svelte';
 	import ContentCard from '../components/ContentCard.svelte';
+	import BackToTopButton from '../components/BackToTopButton.svelte';
 
     const copyright = () => { 
         const year = new Date().getFullYear();
@@ -58,6 +59,7 @@
         </div>
     </div>
     <main class="h-full w-full lg:w-oppo550 lg:overflow-y-auto lg:overflow-x-hidden scroll-smooth">
+        <div id="top"></div>
         <div class="lg:p-8">
             <!-- About -->
             <section id="about" aria-label="About">
@@ -368,6 +370,7 @@
             <section id="copyright" aria-label="Copyright">
                 <AccentHeader footer>{ copyright() }</AccentHeader>    
             </section>
+            <BackToTopButton></BackToTopButton>
         </div>
     </main>
 </div>
