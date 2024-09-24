@@ -1,38 +1,16 @@
-# create-svelte
+# EdCoyle.dev
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+This is my new website (WIP).  The initial release is intended to be a landing page for companies and recruiters looking to hire me as a Frontend developer.  I plan on eventually creating a blog, artist's portfolio, and more.
 
-## Creating a project
+## Tools
 
-If you're seeing this, you've probably already done this step. Congrats!
+This website was created with:
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+- [VS Code](https://code.visualstudio.com)
+- [TypeScript](https://typescriptlang.org)
+- [SvelteKit](https://kit.svelte.dev)
+- [TailwindCSS](https://tailwindcss.com)
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+## Deployment
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+This website is currently deployed on a custom hosting strategy.
