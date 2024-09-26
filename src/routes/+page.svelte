@@ -1,5 +1,5 @@
-<script>
-	import logo from '$lib/img/epc_logo_full.svg';
+<script lang="ts">    
+    import logo from '$lib/img/epc_logo_full.svg';
 
     import thumbnailIdsWeb from '$lib/img/thumbnails/ids-enterprise-wc.png';
     import thumbnailIdsOld from '$lib/img/thumbnails/ids-enterprise.png';
@@ -28,13 +28,40 @@
 	import ContentCard from '../components/ContentCard.svelte';
 	import BackToTopButton from '../components/BackToTopButton.svelte';
 
+    import { resizeDetector } from '../actions/resizeDetector';
+
+    let breakpoint = '';
+    let pageContentWrapperEl: HTMLElement;
+    let pageContentMainEl: HTMLElement;
+    let scrollBtn: BackToTopButton;
+
     const copyright = () => { 
         const year = new Date().getFullYear();
         return `© ${year} Edward Coyle`;
     }
+
+    const handleScrollEvent = () => {
+        if (scrollBtn && pageContentWrapperEl && pageContentMainEl) {
+            if (['xs', 'sm', 'md'].includes(breakpoint)) {
+                console.log('Scroll pos: ', pageContentWrapperEl.scrollTop);
+                scrollBtn.visible = pageContentWrapperEl.scrollTop > 0;
+            } else {
+                console.log('Scroll pos: ', pageContentMainEl.scrollTop);
+                scrollBtn.visible = pageContentMainEl.scrollTop > 0;
+            }
+        }
+    }
+
+    $: {
+        breakpoint = pageContentWrapperEl?.getAttribute('data-breakpoint') ?? '';
+    }
 </script>
 
-<div id="content" class="flex flex-col lg:flex-row h-full w-full overflow-auto lg:overflow-hidden">
+<div 
+    id="content" 
+    class="flex flex-col lg:flex-row h-full w-full overflow-auto lg:overflow-hidden"
+    bind:this={pageContentWrapperEl}
+    use:resizeDetector>
     <div class="w-full h-full lg:w-550">
         <div class="flex flex-col h-full p-8">
             <header class="mb-8">
@@ -58,7 +85,10 @@
             </div>
         </div>
     </div>
-    <main class="h-full w-full lg:w-oppo550 lg:overflow-y-auto lg:overflow-x-hidden scroll-smooth">
+    <main 
+        class="h-full w-full lg:w-oppo550 lg:overflow-y-auto lg:overflow-x-hidden scroll-smooth" 
+        bind:this={pageContentMainEl}
+        on:scroll={handleScrollEvent}>
         <div id="top"></div>
         <div class="lg:p-8">
             <!-- About -->
@@ -370,7 +400,7 @@
             <section id="copyright" aria-label="Copyright">
                 <AccentHeader footer>{ copyright() }</AccentHeader>    
             </section>
-            <BackToTopButton></BackToTopButton>
         </div>
+        <BackToTopButton bind:this={scrollBtn}></BackToTopButton>
     </main>
 </div>

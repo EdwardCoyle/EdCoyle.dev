@@ -1,3 +1,7 @@
+
+import typography from '@tailwindcss/typography';
+
+import screens from './tailwind.screens';
 import type { Config } from 'tailwindcss';
 
 export default {
@@ -41,8 +45,13 @@ export default {
 			'serif': ['Aleo', 'Times New Roman', 'ui-sans-serif', 'system-ui'],
 			'sans': ['Raleway', 'Arial', 'Helvetica', 'ui-serif'],
 			'mono': ['Fira Code', 'ui-monospace', 'SFMono-Regular'],
-		  }
+		},
+
+		// Default Screens are listed here for convenience by the breakpoint detector
+		screens
 	},
 
-	plugins: [require('@tailwindcss/typography')]
+	plugins: [
+		typography
+	]
 } as Config;
