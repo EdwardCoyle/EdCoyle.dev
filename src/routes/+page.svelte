@@ -201,10 +201,10 @@
                                     <a class="link" title="Live Example - IDS Toolbar Component" href="https://main.wc.design.infor.com/ids-toolbar">Live Example - IDS Toolbar Component</a>
                                 </BulletListItem>
                                 <BulletListItem>
-                                    <a class="link" title="Github Repo" href="https://github.com/infor-design/enterprise-wc">Github Repo</a>
+                                    <a class="link" title="Github Repo" href="https://github.com/EdwardCoyle/enterprise-wc">Github Repo</a>
                                 </BulletListItem>
                                 <BulletListItem>
-                                    <a class="link" title="Github Repo (Front-end Framework Examples)" href="https://github.com/infor-design/enterprise-wc-examples">Github Repo (Front-end Framework Examples)</a>
+                                    <a class="link" title="Github Repo (Front-end Framework Examples)" href="https://github.com/EdwardCoyle/enterprise-wc-examples">Github Repo (Front-end Framework Examples)</a>
                                 </BulletListItem>
                             </BulletList>
                             
@@ -242,10 +242,10 @@
                                     <a class="link" title="Live Example - Header Component" href="https://main-enterprise.demo.design.infor.com/components/header/example-flex-toolbar.html">Live Example - Header Component</a>
                                 </BulletListItem>
                                 <BulletListItem>
-                                    <a class="link" title="Github Repo (Enterprise Components)" href="https://github.com/infor-design/enterprise">Github Repo (Enterprise Components)</a>
+                                    <a class="link" title="Github Repo (Enterprise Components)" href="https://github.com/EdwardCoyle/enterprise">Github Repo (Enterprise Components)</a>
                                 </BulletListItem>
                                 <BulletListItem>
-                                    <a class="link" title="Github Repo (Front-end Framework Examples)" href="https://github.com/infor-design/enterprise-ng">Github Repo (Angular Components)</a>
+                                    <a class="link" title="Github Repo (Front-end Framework Examples)" href="https://github.com/EdwardCoyle/enterprise-ng">Github Repo (Angular Components)</a>
                                 </BulletListItem>
                             </BulletList>
                             
