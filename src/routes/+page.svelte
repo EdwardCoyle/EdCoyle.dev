@@ -42,6 +42,7 @@
 
     const handleScrollEvent = () => {
         if (scrollBtn && pageContentWrapperEl && pageContentMainEl) {
+            debugger;
             if (['xs', 'sm', 'md'].includes(breakpoint)) {
                 console.log('Scroll pos: ', pageContentWrapperEl.scrollTop);
                 scrollBtn.visible = pageContentWrapperEl.scrollTop > 0;
@@ -103,7 +104,7 @@
             </section>
 
             <!-- Work Experience -->
-            <section  id="work" aria-label="Work Experience">
+            <section id="work" aria-label="Work Experience">
                 <AccentHeader>Work Experience</AccentHeader>
                 <!-- Schneider -->
                 <ContentCard>
@@ -196,7 +197,7 @@
                             <EmptyAsideImage>No Screenshot</EmptyAsideImage>
                         </ContentGridAside>
                         <ContentGridMain>
-                            <h3 class="font-bold"><a href="#project-op-patient-portal">This Website!</a></h3>
+                            <h3 class="font-bold"><a href="#project-this-site">This Website!</a></h3>
                             <p class="text-sm py-4">
                                 I built this website with love... and also <a href="https://kit.svelte.dev/" class="link">Sveltekit</a> and <a href="https://tailwindcss.com/" class="link">Tailwind CSS</a>. 
                             </p>
