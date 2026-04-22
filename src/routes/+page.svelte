@@ -189,22 +189,22 @@
                             <p class="text-sm py-4">I contributed to the architecture powering the new Web Component library, as well as the components themselves, utilized by modern Infor applications. I'm also one of the gatekeepers that helps accept/build new features based on posted Github issues. The live examples below include some components I've been responsible for building and maintaining.</p>
                             <BulletList>
                                 <BulletListItem>
-                                    <a class="link" title="Live Examples (Main Page)" href="https://main.wc.design.infor.com">Live Examples (Main Page)</a> 
+                                    <a class="link" title="Live Examples (Main Page)" href="https://edcoyle.dev/projects/ids-wc/">Live Examples (Main Page)</a> 
                                 </BulletListItem>
                                 <BulletListItem>
-                                    <a class="link" title="Live Example - IDS Popup Menu Component" href="https://main.wc.design.infor.com/ids-popup-menu">Live Example - IDS Popup Menu Component</a>
+                                    <a class="link" title="Live Example - IDS Popup Menu Component" href="https://edcoyle.dev/projects/ids-wc/">Live Example - IDS Popup Menu Component</a>
                                 </BulletListItem>
                                 <BulletListItem>
-                                    <a class="link" title="Live Example - IDS Module Nav Component" href="https://main.wc.design.infor.com/ids-module-nav">Live Example - IDS Module Nav Component</a>
+                                    <a class="link" title="Live Example - IDS Module Nav Component" href="https://edcoyle.dev/projects/ids-wc/">Live Example - IDS Module Nav Component</a>
                                 </BulletListItem>
                                 <BulletListItem>
-                                    <a class="link" title="Live Example - IDS Toolbar Component" href="https://main.wc.design.infor.com/ids-toolbar">Live Example - IDS Toolbar Component</a>
+                                    <a class="link" title="Live Example - IDS Toolbar Component" href="https://edcoyle.dev/projects/ids-wc/">Live Example - IDS Toolbar Component</a>
                                 </BulletListItem>
                                 <BulletListItem>
-                                    <a class="link" title="Github Repo" href="https://github.com/EdwardCoyle/enterprise-wc">Github Repo</a>
+                                    <a class="link" title="Github Repo" href="https://github.com/EdwardCoyle/enterprise-wc">Github Repo (Fork)</a>
                                 </BulletListItem>
                                 <BulletListItem>
-                                    <a class="link" title="Github Repo (Front-end Framework Examples)" href="https://github.com/EdwardCoyle/enterprise-wc-examples">Github Repo (Front-end Framework Examples)</a>
+                                    <a class="link" title="Github Repo (Front-end Framework Examples)" href="https://github.com/EdwardCoyle/enterprise-wc-examples">Github Repo (Fork)</a>
                                 </BulletListItem>
                             </BulletList>
                             
