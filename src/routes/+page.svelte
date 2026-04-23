@@ -1,5 +1,6 @@
 <script lang="ts">
     import { onMount } from 'svelte';
+	import { replaceState } from '$app/navigation';
 	import logo from '$lib/img/epc_logo_full.svg';
 
     import thumbnailIdsWeb from '$lib/img/thumbnails/ids-enterprise-wc.png';
@@ -89,7 +90,7 @@
         } else {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-        history.replaceState(null, '', window.location.pathname + window.location.search);
+        replaceState(window.location.pathname + window.location.search, {});
     }
 
     onMount(() => {

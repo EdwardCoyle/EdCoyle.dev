@@ -132,7 +132,7 @@
     /* Content is centered at max-w-680 (md:mx-auto md:max-w-680).
        Right edge of centered block = (100vw - 680px) / 2 = 50vw - 340px from right. */
     .scroll-to-top-button {
-      right: max(1.5rem, calc(50vw - 340px));
+      right: max(1.5rem, calc(50vw - 350px));
     }
   }
 
