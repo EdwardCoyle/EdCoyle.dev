@@ -63,10 +63,10 @@
             <section id="about" aria-label="About">
                 <AccentHeader>About Me</AccentHeader>
                 <ContentCard>
-                    <p class="mb-8 text-md">I've been interested in tech ever since I was young, back when I first started playing with the <a class="link" href="https://en.wikibooks.org/wiki/ZZT-OOP/Introduction">ZZT OOP language</a> on my parents' i386 DOS/Windows machine.  Ever since then, I've loved tinkering with programming languages and pixel art tools, making my best attempts at creating something nifty.</p>
-                    <p class="mb-8 text-md">These days, I'm a Software Engineer working to help organizations make their user experiences beautiful and functional.  Recently, I've worked on the <a class="link" href="https://design.infor.com/">Infor Design System</a>, where I was responsible for bringing a significant amount of their design system to life as TypeScript-based Web Components used by all the company's application teams.</p>
-                    <p class="mb-8 text-md">My overall professional experience ranges from enterprise-level application development, to motion graphic design and video-editing/post-production, to character animation. I attended The Art Institute of Philadelphia for my bachelor's degree in Media Arts & Animation, specializing in 3D Animation. I've also worked on some side projects involving programming and art direction for <a class="link" href="https://thegamespage.com">iOS and Windows games</a>! I've been fortunate to have many interesting opportunities during my short career.</p>
-                    <p class="mb-8 text-md">I'm always interested in new opportunities to be creative.  I'd love to learn more about yours.  Please <a class="link" href="mailto:edcoyle86@gmail.com">contact me</a> if you think we'd work well together!</p>
+                    <p class="mb-8 text-md">My interest in tech started early, writing little experiments in the <a class="link" href="https://en.wikibooks.org/wiki/ZZT-OOP/Introduction">ZZT OOP language</a> on my parents' i386 DOS/Windows machine. Since then, I've been drawn to the space where code and visuals overlap, spending plenty of time tinkering with programming languages, pixel art tools, and whatever else looked interesting enough to turn into something real.</p>
+                    <p class="mb-8 text-md">Today, I’m a Software Engineer focused on building user experiences that feel polished, expressive, and practical. Most recently, I worked on the <a class="link" href="https://design.infor.com/">Infor Design System</a>, helping turn a large portion of the system into TypeScript-based Web Components used across the company’s application teams.</p>
+                    <p class="mb-8 text-md">My background spans enterprise application development, motion graphics, video editing and post-production, and character animation. I earned a bachelor’s degree in Media Arts &amp; Animation from The Art Institute of Philadelphia, with a focus in 3D Animation. Along the way, I’ve also worked on side projects involving programming and art direction for <a class="link" href="https://thegamespage.com">iOS and Windows games</a>, which has given my career a mix of technical depth and creative range.</p>
+                    <p class="mb-8 text-md">I’m always interested in opportunities to make thoughtful, creative work with good people. If that sounds like your kind of project, <a class="link" href="mailto:edcoyle86@gmail.com">get in touch</a>.</p>
                 </ContentCard>
             </section>
 
@@ -81,8 +81,8 @@
                             <span>Jan 2024 - present</span>
                         </ContentGridAside>  
                         <ContentGridMain>
-                            <h3 class="font-bold"><a href="#work-schneider">Schneider Electric (SE Advisory Services)</a></h3>
-                            <h4>Angular Software Engineer</h4>
+                            <h3 class="font-bold"><a href="#work-schneider">Schneider Electric</a></h3>
+                            <h4>Angular Software Engineer @ SE Advisory Services</h4>
                             <p class="text-sm py-4">
                                 Responsible for standing up and maintaining several UI layers for the Resource Advisor Plus (RA+) platform.
                                 Led an initiative to overhaul application UIs from legacy components and AI-generated prototypes to the modern QSB Design System.
@@ -136,8 +136,8 @@
                         <span>Jun 2010 - Aug 2014</span>
                     </ContentGridAside>
                     <ContentGridMain>
-                        <h3 class="font-bold"><a href="#work-connexin">Connexin Software, Inc. (Office Practicum)</a></h3>
-                        <h4>Software Developer @ UX Team</h4>
+                        <h3 class="font-bold"><a href="#work-connexin">Connexin Software, Inc.</a></h3>
+                        <h4>Software Developer @ Office Practicum UX Team</h4>
                         <p class="text-sm py-4">
                             Collaborated on the design process for SaaS-based electronic health record software, including architecture, graphics, and prototypes.
                             Implemented customer-specific themes for the Office Practicum patient portal,  enhancing user experience and branding consistency.
