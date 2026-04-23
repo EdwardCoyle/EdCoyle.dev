@@ -267,6 +267,11 @@
                             <p class="text-sm py-4">
                                 I built this website with love... and also <a href="https://kit.svelte.dev/" class="link">Sveltekit</a> and <a href="https://tailwindcss.com/" class="link">Tailwind CSS</a>. 
                             </p>
+                            <BulletList>
+                                <BulletListItem>
+                                    <a class="link" title="Github Repo" href="https://github.com/EdwardCoyle/EdCoyle.dev">Github Repo</a>
+                                </BulletListItem>
+                            </BulletList>
                             <PillList>
                                 <Pill>Sveltekit</Pill>
                                 <Pill>TailwindCSS</Pill>
