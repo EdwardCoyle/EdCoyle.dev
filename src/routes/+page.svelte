@@ -141,7 +141,7 @@
 
 <div bind:this={homeEl} id="home" class="flex h-full w-full flex-col overflow-x-hidden overflow-y-auto lg:flex-row lg:overflow-hidden">
     <div class="h-full w-full lg:w-550">
-        <div class="flex h-full flex-col p-8">
+        <div class="flex h-full max-w-550 lg:max-w-none flex-col p-8 mx-auto lg:mx-0">
             <header class="mb-8">
                 <h1>
                     <a href="#home">
@@ -149,7 +149,7 @@
                     </a>
                 </h1>
             </header>
-            <div class="mb-8 max-w-32r">
+            <div class="mb-8 max-w-32r text-center lg:text-start">
                 <p class="tagline">I am a seasoned front-end developer who loves designing fun and accessible experiences</p>
             </div>
             <ul class="mb-8 max-lg:hidden">
@@ -157,7 +157,7 @@
                 <li class="flex flex-row items-center gap-2"><Triangle></Triangle><a class="link" href="#work">Work Experience</a></li>
                 <li class="flex flex-row items-center gap-2"><Triangle></Triangle><a class="link" href="#projects">Past Projects</a></li>
             </ul>
-            <div class="mb-8 flex gap-2 lg:mb-0 lg:mt-auto">
+            <div class="mb-8 flex gap-2 lg:mb-0 lg:mt-auto justify-center lg:justify-normal">
                 <a class="link" href="https://github.com/EdwardCoyle"><Github /></a>
                 <a class="link" href="https://linkedin.com/in/edwardcoylejr"><LinkedIn /></a>
             </div>
@@ -166,7 +166,7 @@
     <main bind:this={mainEl} class="scroll-smooth h-full w-full lg:w-oppo550 lg:overflow-x-hidden lg:overflow-y-auto">
         <MobileScrollProgress progress={scrollProgress} />
 
-        <div class="content-area-container relative">
+        <div class="content-area-container relative md:mx-auto lg:mx-0 md:max-w-680 lg:max-w-none">
             <div class="absolute top-4 z-50 h-0 overflow-visible flex justify-end pr-4 lg:pr-8 max-w-680">
                 <ScrollToTopButton visible={showScrollToTop} on:click={scrollToTop} />
             </div>
