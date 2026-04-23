@@ -128,11 +128,11 @@
     color: var(--focus-color);
   }
 
-  @media (min-width: 680px) and (max-width: 1023px) {
-    /* AccentHeader is max-w-680 (no sidebar at this width).
-       Keep button 1rem to the right of that 680px boundary. */
+  @media (min-width: 640px) and (max-width: 1023px) {
+    /* Content is centered at max-w-680 (md:mx-auto md:max-w-680).
+       Right edge of centered block = (100vw - 680px) / 2 = 50vw - 340px from right. */
     .scroll-to-top-button {
-      right: max(1rem, calc(100vw - 696px));
+      right: max(1.5rem, calc(50vw - 340px));
     }
   }
 

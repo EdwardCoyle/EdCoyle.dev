@@ -63,6 +63,24 @@
         showScrollToTop = scrollTop > (homeEl ? homeEl.clientHeight : window.innerHeight) * 0.3;
     }
 
+    function updateStickyStates() {
+        const sentinels: [HTMLDivElement, (v: boolean) => void][] = [
+            [aboutStickyTrigger,    (v) => (aboutHeaderStuck    = v)],
+            [workStickyTrigger,     (v) => (workHeaderStuck     = v)],
+            [projectsStickyTrigger, (v) => (projectsHeaderStuck = v)],
+        ];
+        if (window.innerWidth >= mobileBreakpoint && mainEl) {
+            const containerTop = mainEl.getBoundingClientRect().top;
+            for (const [el, setter] of sentinels) {
+                setter(el ? el.getBoundingClientRect().top < containerTop + 1 : false);
+            }
+        } else {
+            for (const [el, setter] of sentinels) {
+                setter(el ? el.getBoundingClientRect().top < 1 : false);
+            }
+        }
+    }
+
     function scrollToTop() {
         if (window.innerWidth >= mobileBreakpoint && mainEl) {
             mainEl.scrollTo({ top: 0, behavior: 'smooth' });
@@ -86,8 +104,12 @@
             });
         };
         scheduleUpdate();
+        // Run a deferred sticky state check after the browser has painted and
+        // any anchor-based scroll has settled, in case fast scroll on load
+        // causes the IntersectionObserver to miss the initial stuck state.
+        setTimeout(() => updateStickyStates(), 100);
         window.addEventListener('scroll', scheduleUpdate, { passive: true });
-        window.addEventListener('resize', scheduleUpdate);
+        window.addEventListener('resize', () => { scheduleUpdate(); updateStickyStates(); });
         mainEl?.addEventListener('scroll', scheduleUpdate, { passive: true });
         homeEl?.addEventListener('scroll', scheduleUpdate, { passive: true });
 
@@ -126,7 +148,7 @@
 
         return () => {
             window.removeEventListener('scroll', scheduleUpdate);
-            window.removeEventListener('resize', scheduleUpdate);
+            window.removeEventListener('resize', () => { scheduleUpdate(); updateStickyStates(); });
             mainEl?.removeEventListener('scroll', scheduleUpdate);
             homeEl?.removeEventListener('scroll', scheduleUpdate);
             observers.forEach((o) => o.disconnect());
