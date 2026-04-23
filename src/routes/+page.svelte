@@ -192,13 +192,13 @@
                                     <a class="link" title="Live Examples (Main Page)" href="https://edcoyle.dev/projects/ids-wc/">Live Examples (Main Page)</a> 
                                 </BulletListItem>
                                 <BulletListItem>
-                                    <a class="link" title="Live Example - IDS Popup Menu Component" href="https://edcoyle.dev/projects/ids-wc/">Live Example - IDS Popup Menu Component</a>
+                                    <a class="link" title="Live Example - IDS Popup Menu Component" href="https://edcoyle.dev/projects/ids-wc/ids-popup">Live Example - IDS Popup Menu Component</a>
                                 </BulletListItem>
                                 <BulletListItem>
-                                    <a class="link" title="Live Example - IDS Module Nav Component" href="https://edcoyle.dev/projects/ids-wc/">Live Example - IDS Module Nav Component</a>
+                                    <a class="link" title="Live Example - IDS Module Nav Component" href="https://edcoyle.dev/projects/ids-wc/ids-module-nav">Live Example - IDS Module Nav Component</a>
                                 </BulletListItem>
                                 <BulletListItem>
-                                    <a class="link" title="Live Example - IDS Toolbar Component" href="https://edcoyle.dev/projects/ids-wc/">Live Example - IDS Toolbar Component</a>
+                                    <a class="link" title="Live Example - IDS Toolbar Component" href="https://edcoyle.dev/projects/ids-wc/ids-toolbar">Live Example - IDS Toolbar Component</a>
                                 </BulletListItem>
                                 <BulletListItem>
                                     <a class="link" title="Github Repo" href="https://github.com/EdwardCoyle/enterprise-wc">Github Repo (Fork)</a>
