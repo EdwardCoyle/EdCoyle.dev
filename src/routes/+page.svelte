@@ -35,6 +35,8 @@
     let aboutStickyTrigger: HTMLDivElement;
     let workStickyTrigger: HTMLDivElement;
     let projectsStickyTrigger: HTMLDivElement;
+    let mainEl: HTMLElement;
+    let homeEl: HTMLElement;
     let scrollProgress = 0;
     let showScrollToTop = false;
     let aboutHeaderStuck = false;
@@ -48,19 +50,28 @@
     function updateScrollProgress() {
         if (window.innerWidth >= mobileBreakpoint) {
             scrollProgress = 0;
-            showScrollToTop = false;
+            if (mainEl) {
+                showScrollToTop = mainEl.scrollTop > mainEl.clientHeight * 0.9;
+            }
             return;
         }
 
-        const scrollTop = window.scrollY || document.documentElement.scrollTop || 0;
-        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollTop = homeEl ? homeEl.scrollTop : (window.scrollY || document.documentElement.scrollTop || 0);
+        const scrollHeight = homeEl ? (homeEl.scrollHeight - homeEl.clientHeight) : (document.documentElement.scrollHeight - window.innerHeight);
 
         scrollProgress = scrollHeight > 0 ? clamp((scrollTop / scrollHeight) * 100, 0, 100) : 0;
-        showScrollToTop = scrollTop > window.innerHeight * 0.9;
+        showScrollToTop = scrollTop > (homeEl ? homeEl.clientHeight : window.innerHeight) * 0.9;
     }
 
     function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (window.innerWidth >= mobileBreakpoint && mainEl) {
+            mainEl.scrollTo({ top: 0, behavior: 'smooth' });
+        } else if (homeEl) {
+            homeEl.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        history.replaceState(null, '', window.location.pathname + window.location.search);
     }
 
     onMount(() => {
@@ -77,6 +88,8 @@
         scheduleUpdate();
         window.addEventListener('scroll', scheduleUpdate, { passive: true });
         window.addEventListener('resize', scheduleUpdate);
+        mainEl?.addEventListener('scroll', scheduleUpdate, { passive: true });
+        homeEl?.addEventListener('scroll', scheduleUpdate, { passive: true });
 
         // Sticky detection via IntersectionObserver.
         // Each sentinel sits just above the sticky header in normal flow.
@@ -107,6 +120,8 @@
         return () => {
             window.removeEventListener('scroll', scheduleUpdate);
             window.removeEventListener('resize', scheduleUpdate);
+            mainEl?.removeEventListener('scroll', scheduleUpdate);
+            homeEl?.removeEventListener('scroll', scheduleUpdate);
             observers.forEach((o) => o.disconnect());
         };
     });
@@ -117,7 +132,7 @@
     }
 </script>
 
-<div id="home" class="flex h-full w-full flex-col overflow-auto lg:flex-row lg:overflow-hidden">
+<div bind:this={homeEl} id="home" class="flex h-full w-full flex-col overflow-x-hidden overflow-y-auto lg:flex-row lg:overflow-hidden">
     <div class="h-full w-full lg:w-550">
         <div class="flex h-full flex-col p-8">
             <header class="mb-8">
@@ -141,7 +156,7 @@
             </div>
         </div>
     </div>
-    <main class="scroll-smooth h-full w-full lg:w-oppo550 lg:overflow-x-hidden lg:overflow-y-auto">
+    <main bind:this={mainEl} class="scroll-smooth h-full w-full lg:w-oppo550 lg:overflow-x-hidden lg:overflow-y-auto">
         <MobileScrollProgress progress={scrollProgress} />
         <div class="lg:p-8">
             <!-- About -->
@@ -457,7 +472,7 @@
                 </ContentCard>
             </section>
 
-            <section id="copyright" aria-label="Copyright">
+            <section id="copyright" aria-label="Copyright" class="pb-16 lg:pb-0">
                 <AccentHeader footer>{ copyright() }</AccentHeader>    
             </section>
         </div>
