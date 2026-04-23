@@ -51,7 +51,7 @@
         if (window.innerWidth >= mobileBreakpoint) {
             scrollProgress = 0;
             if (mainEl) {
-                showScrollToTop = mainEl.scrollTop > mainEl.clientHeight * 0.9;
+                showScrollToTop = mainEl.scrollTop > mainEl.clientHeight * 0.3;
             }
             return;
         }
@@ -60,7 +60,7 @@
         const scrollHeight = homeEl ? (homeEl.scrollHeight - homeEl.clientHeight) : (document.documentElement.scrollHeight - window.innerHeight);
 
         scrollProgress = scrollHeight > 0 ? clamp((scrollTop / scrollHeight) * 100, 0, 100) : 0;
-        showScrollToTop = scrollTop > (homeEl ? homeEl.clientHeight : window.innerHeight) * 0.9;
+        showScrollToTop = scrollTop > (homeEl ? homeEl.clientHeight : window.innerHeight) * 0.3;
     }
 
     function scrollToTop() {
