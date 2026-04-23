@@ -128,15 +128,23 @@
     color: var(--focus-color);
   }
 
+  @media (min-width: 680px) and (max-width: 1023px) {
+    /* AccentHeader is max-w-680 (no sidebar at this width).
+       Keep button 1rem to the right of that 680px boundary. */
+    .scroll-to-top-button {
+      right: max(1rem, calc(100vw - 696px));
+    }
+  }
+
   @media (min-width: 1024px) {
     .mobile-sticky-header-blur {
       backdrop-filter: none;
       -webkit-backdrop-filter: none;
     }
     /* Keep button aligned with the content column (550px sidebar + 32px padding + 680px content = 1262px).
-       On wider viewports, push right inward so the button stays ~1rem inside the content right edge. */
+       On wider viewports, push right inward so the button stays ~2rem inside the content right edge. */
     .scroll-to-top-button {
-      right: max(1rem, calc(100vw - 1246px));
+      right: max(2rem, calc(100vw - 1262px));
     }
   }
 }
