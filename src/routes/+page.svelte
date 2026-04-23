@@ -81,12 +81,14 @@
                             <span>Jan 2024 - present</span>
                         </ContentGridAside>  
                         <ContentGridMain>
-                            <h3 class="font-bold"><a href="#work-schneider">Schneider Electric</a></h3>
+                            <h3 class="font-bold"><a href="#work-schneider">Schneider Electric (SE Advisory Services)</a></h3>
                             <h4>Angular Software Engineer</h4>
                             <p class="text-sm py-4">
-                                Built front end for data aggregation tool aiding customers in ESG data collection.
+                                Responsible for standing up and maintaining several UI layers for the Resource Advisor Plus (RA+) platform.
+                                Led an initiative to overhaul application UIs from legacy components and AI-generated prototypes to the modern QSB Design System.
+                                Built front ends for data aggregation tool aiding customers in ESG data collection.
                                 Educated team on Angular app development using module/native federation.
-                                Advocated for improved front end standards
+                                Advocated for improved front end standards.
                             </p>
                             <PillList>
                                 <Pill>TypeScript</Pill>
@@ -186,19 +188,19 @@
                         <ContentGridMain>
                             <h3 class="font-bold"><a href="#project-ids-wc">Web Component Library</a></h3>
                             <h4>Infor Design System</h4>
-                            <p class="text-sm py-4">I contributed to the architecture powering the new Web Component library, as well as the components themselves, utilized by modern Infor applications. I'm also one of the gatekeepers that helps accept/build new features based on posted Github issues. The live examples below include some components I've been responsible for building and maintaining.</p>
+                            <p class="text-sm py-4">I contributed to the architecture and components that make up Infor's Web Component library, utilized by their modern web applications. I also help accept/build new features based on posted Github issues. Below are some live examples of the component library in action.</p>
                             <BulletList>
                                 <BulletListItem>
                                     <a class="link" title="Live Examples (Main Page)" href="https://edcoyle.dev/projects/ids-wc/">Live Examples (Main Page)</a> 
                                 </BulletListItem>
                                 <BulletListItem>
-                                    <a class="link" title="Live Example - IDS Popup Menu Component" href="https://edcoyle.dev/projects/ids-wc/ids-popup">Live Example - IDS Popup Menu Component</a>
+                                    <a class="link" title="Live Example - IDS Popup Menu Component" href="https://edcoyle.dev/projects/ids-wc/ids-popup-menu/shortcut-keys.html">Live Example - IDS Popup Menu Component</a>
                                 </BulletListItem>
                                 <BulletListItem>
-                                    <a class="link" title="Live Example - IDS Module Nav Component" href="https://edcoyle.dev/projects/ids-wc/ids-module-nav">Live Example - IDS Module Nav Component</a>
+                                    <a class="link" title="Live Example - IDS Module Nav Component" href="https://edcoyle.dev/projects/ids-wc/ids-module-nav/example.html">Live Example - IDS Module Nav Component</a>
                                 </BulletListItem>
                                 <BulletListItem>
-                                    <a class="link" title="Live Example - IDS Toolbar Component" href="https://edcoyle.dev/projects/ids-wc/ids-toolbar">Live Example - IDS Toolbar Component</a>
+                                    <a class="link" title="Live Example - IDS Toolbar Component" href="https://edcoyle.dev/projects/ids-wc/ids-toolbar/example.html">Live Example - IDS Toolbar Component</a>
                                 </BulletListItem>
                                 <BulletListItem>
                                     <a class="link" title="Github Repo" href="https://github.com/EdwardCoyle/enterprise-wc">Github Repo (Fork)</a>
@@ -227,25 +229,13 @@
                         <ContentGridMain>
                             <h3 class="font-bold"><a href="#project-ids-ep">jQuery Component Library</a></h3>
                             <h4>Infor Design System</h4>
-                            <p class="text-sm py-4">I built from scratch many of the jQuery components used in legacy Infor applications. I've also maintained the components for the duration of my time at Infor, and helped bring this particular library from closed to open-source on Github. The live examples below include some components I've been responsible for building and maintaining.</p>
+                            <p class="text-sm py-4">I built from scratch and maintained many of the jQuery components used in legacy Infor web applications. I also had the opportunity to bring this particular library from closed to open-source on Github. The library includes a variety of components that were essential for legacy applications.</p>
                             <BulletList>
                                 <BulletListItem>
-                                    <a class="link" title="Official Documenation" href="https://design.infor.com/">Official Documentation</a> 
+                                    <a class="link" title="Github Repo (Enterprise Components)" href="https://github.com/EdwardCoyle/enterprise">Enterprise Components Github Repo (Fork)</a>
                                 </BulletListItem>
                                 <BulletListItem>
-                                    <a class="link" title="Live Example - Main Page" href="https://main-enterprise.demo.design.infor.com/">Live Examples - Main Page</a>
-                                </BulletListItem>
-                                <BulletListItem>
-                                    <a class="link" title="Live Example - App Menu Component" href="https://main-enterprise.demo.design.infor.com/components/applicationmenu/example-personalized-roles.html">Live Example - App Menu Component</a>
-                                </BulletListItem>
-                                <BulletListItem>
-                                    <a class="link" title="Live Example - Header Component" href="https://main-enterprise.demo.design.infor.com/components/header/example-flex-toolbar.html">Live Example - Header Component</a>
-                                </BulletListItem>
-                                <BulletListItem>
-                                    <a class="link" title="Github Repo (Enterprise Components)" href="https://github.com/EdwardCoyle/enterprise">Github Repo (Enterprise Components)</a>
-                                </BulletListItem>
-                                <BulletListItem>
-                                    <a class="link" title="Github Repo (Front-end Framework Examples)" href="https://github.com/EdwardCoyle/enterprise-ng">Github Repo (Angular Components)</a>
+                                    <a class="link" title="Github Repo (Front-end Framework Examples)" href="https://github.com/EdwardCoyle/enterprise-ng">Angular Components Github Repo (Fork)</a>
                                 </BulletListItem>
                             </BulletList>
                             
