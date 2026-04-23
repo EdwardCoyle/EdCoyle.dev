@@ -174,7 +174,7 @@
                             <span>Jan 2024 - present</span>
                         </ContentGridAside>  
                         <ContentGridMain>
-                            <h3 class="font-bold"><a href="#work-schneider">Schneider Electric</a></h3>
+                            <h3 id="work-schneider" class="font-bold">Schneider Electric</h3>
                             <h4>Angular Software Engineer @ SE Advisory Services</h4>
                             <p class="text-sm py-4">
                                 Responsible for standing up and maintaining several UI layers for the Resource Advisor Plus (RA+) platform.
@@ -202,7 +202,7 @@
                         <span>Aug 2014 - Jan 2024</span>
                     </ContentGridAside>
                     <ContentGridMain>
-                        <h3 class="font-bold"><a href="#work-infor">Infor, Inc.</a></h3>
+                        <h3 id="work-infor" class="font-bold">Infor, Inc.</h3>
                         <h4>Senior Software Engineer @ Infor Design System (IDS)</h4>
                         <p class="text-sm py-4">
                             Played a key role in developing and delivering two significant revisions of Infor’s enterprise UI components, empowering application engineers to prototype more efficiently.
@@ -229,7 +229,7 @@
                         <span>Jun 2010 - Aug 2014</span>
                     </ContentGridAside>
                     <ContentGridMain>
-                        <h3 class="font-bold"><a href="#work-connexin">Connexin Software, Inc.</a></h3>
+                        <h3 id="work-connexin" class="font-bold">Connexin Software, Inc.</h3>
                         <h4>Software Developer @ Office Practicum UX Team</h4>
                         <p class="text-sm py-4">
                             Collaborated on the design process for SaaS-based electronic health record software, including architecture, graphics, and prototypes.
@@ -263,7 +263,7 @@
                             <EmptyAsideImage>No Screenshot</EmptyAsideImage>
                         </ContentGridAside>
                         <ContentGridMain>
-                            <h3 class="font-bold"><a href="#project-op-patient-portal">This Website!</a></h3>
+                            <h3 id="project-op-patient-portal" class="font-bold">This Website!</h3>
                             <p class="text-sm py-4">
                                 I built this website with love... and also <a href="https://kit.svelte.dev/" class="link">Sveltekit</a> and <a href="https://tailwindcss.com/" class="link">Tailwind CSS</a>. 
                             </p>
@@ -288,7 +288,7 @@
                             <img src={thumbnailIdsWeb} alt="Thumbnail for IDS Web Components">
                         </ContentGridAside>
                         <ContentGridMain>
-                            <h3 class="font-bold"><a href="#project-ids-wc">Web Component Library</a></h3>
+                            <h3 id="project-ids-wc" class="font-bold">Web Component Library</h3>
                             <h4>Infor Design System</h4>
                             <p class="text-sm py-4">I contributed to the architecture and components that make up Infor's Web Component library, utilized by their modern web applications. I also help accept/build new features based on posted Github issues. Below are some live examples of the component library in action.</p>
                             <BulletList>
@@ -329,7 +329,7 @@
                             <img class="border-1" src={thumbnailIdsOld} alt="Thumbnail for IDS Web Components">
                         </ContentGridAside>
                         <ContentGridMain>
-                            <h3 class="font-bold"><a href="#project-ids-ep">jQuery Component Library</a></h3>
+                            <h3 id="project-ids-ep" class="font-bold">jQuery Component Library</h3>
                             <h4>Infor Design System</h4>
                             <p class="text-sm py-4">I built from scratch and maintained many of the jQuery components used in legacy Infor web applications. I also had the opportunity to bring this particular library from closed to open-source on Github. The library includes a variety of components that were essential for legacy applications.</p>
                             <BulletList>
@@ -358,7 +358,7 @@
                             <EmptyAsideImage>No Screenshot</EmptyAsideImage>
                         </ContentGridAside>
                         <ContentGridMain>
-                            <h3 class="font-bold"><a href="#project-op-patient-portal">Office Practicum Patient Portal</a></h3>
+                            <h3 id="project-op-patient-portal" class="font-bold">Office Practicum Patient Portal</h3>
                             <h4>Connexin Software</h4>
                             <p class="text-sm py-4">
                                 I worked on customer-facing portions of the OP Patient Portal between 2010 and 2014.  This included writing HTML/JS/CSS front-ends, and sometimes working on the Java/Liferay/Tomcat backend, for many custom-branded patient portals delivered to Pediatrician clients.
@@ -379,7 +379,7 @@
                             <img class="border-1 max-h-60" src={thumbnailFTLS} alt="Thumbnail for Find The Lucky Spot">
                         </ContentGridAside>
                         <ContentGridMain>
-                            <h3 class="font-bold"><a href="#project-lucky-spot">Find The Lucky Spot (iOS)</a></h3>
+                            <h3 id="project-lucky-spot" class="font-bold">Find The Lucky Spot (iOS)</h3>
                             <h4>The Games Page</h4>
                             <p class="text-sm py-4">
                                 I worked on pixel art, hand-drawn images, and other art assets for this iOS game, originally released on iOS in 2012 and on the web in 2009 from <a href="https://thegamespage.com">The Games Page</a>.
@@ -400,7 +400,7 @@
                             <img class="border-1 max-h-60" src={thumbnailDDan} alt="Thumbnail for Diver Dan">
                         </ContentGridAside>
                         <ContentGridMain>
-                            <h3 class="font-bold"><a href="#project-diver-dan">Diver Dan (iOS)</a></h3>
+                            <h3 id="project-diver-dan" class="font-bold">Diver Dan (iOS)</h3>
                             <h4>The Games Page</h4>
                             <p class="text-sm py-4">
                                 I worked on pixel art and hand-drawn images for this iOS game, originally released on iOS in 2017 and on the web in 2009 from <a href="https://thegamespage.com">The Games Page</a>.
@@ -424,7 +424,7 @@
                             <img class="border-1 max-h-60" src={thumbnailHurdler} alt="Thumbnail for Hurdler">
                         </ContentGridAside>
                         <ContentGridMain>
-                            <h3 class="font-bold"><a href="#project-hurdler">Hurdler (iOS)</a></h3>
+                            <h3 id="project-hurdler" class="font-bold">Hurdler (iOS)</h3>
                             <h4>The Games Page</h4>
                             <p class="text-sm py-4">
                                 I worked on pixel art and hand-drawn images for this iOS game, originally released on iOS in 2011 and on Windows Desktop in 2003 from <a href="https://thegamespage.com">The Games Page</a>.
@@ -444,7 +444,7 @@
                             <img class="border-1 max-h-60" src={thumbnailTGP} alt="Thumbnail for TGP">
                         </ContentGridAside>
                         <ContentGridMain>
-                            <h3 class="font-bold"><a href="#project-tgp">The Games Page</a></h3>
+                            <h3 id="project-tgp" class="font-bold">The Games Page</h3>
                             <p class="text-sm py-4">
                                 I've been involved with The Games Page organization since its inception in 2000.  I was originally responsible for pixel art and some game graphics, but eventually became the webmaster.  I managed our PHPBB, built several iterations of the website in PHP, Wordpress, etc, and helped stand up infrastructure for handling score submissions.  The current iteration of the website is less complex and serves as a landing page for downloading our legacy games, but I still do the hosting and general management of the site.
                             </p>
