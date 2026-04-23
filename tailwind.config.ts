@@ -25,16 +25,26 @@ export default {
 			maxWidth: {
 				'32r': '32rem',
 				'200': '200px',
+				'350': '350px',
+				'550': '550px',
 				'640': '640px',
-				'680': '680px'
+				'680': '680px',
+				'oppo300': 'calc(100% - 300px)',
+				'oppo550': 'calc(100% - 550px)',
+				'oppo640': 'calc(100% - 640px)',
+				'oppo700': 'calc(100% - 700px)'
 			},
 			width: {
 				'32r': '32rem',
 				'200': '200px',
+				'350': '350px',
 				'550': '550px',
 				'640': '640px',
 				'680': '680px',
-				'oppo550': 'calc(100% - 550px)'
+				'oppo300': 'calc(100% - 300px)',
+				'oppo550': 'calc(100% - 550px)',
+				'oppo640': 'calc(100% - 640px)',
+				'oppo700': 'calc(100% - 700px)'
 			}
 		},
 		fontFamily: {

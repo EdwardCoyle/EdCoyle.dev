@@ -4,6 +4,18 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+:root {
+  --bg-color: #fff;
+  --focus-color: #e74b3e;
+  --shadow-color: rgba(127, 129, 131, 0.3);
+
+  --white-opaque: rgba(255, 255, 255, 1);
+  --white-transparent: rgba(255, 255, 255, 0);
+
+  --black-opaque: rgba(0, 0, 0, 1);
+  --black-transparent: rgba(0, 0, 0, 0);
+}
+
 @layer base {
   :root {
     --font-family-serif: "Aleo", 'Times New Roman', serif;
@@ -65,7 +77,7 @@
   }
 
   .mobile-sticky-header {
-    @apply sticky top-0 z-30 -mx-4 px-4 pt-4 lg:static lg:m-0 lg:p-0;
+    @apply sticky top-0 z-30 -mx-4 px-4 pt-5 lg:-mx-8 lg:px-8;
     overflow: visible;
   }
 
@@ -79,19 +91,19 @@
     inset: 0 -0.75rem -2.5rem;
     background: linear-gradient(
       to bottom,
-      rgba(255, 255, 255, 1) 65%,
-      rgba(255, 255, 255, 0) 100%
+      var(--white-opaque) 65%,
+      var(--white-transparent) 100%
     );
     mask-image: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 1) 65%,
-      rgba(0, 0, 0, 1) 100%,
+      var(--black-opaque) 65%,
+      var(--black-transparent) 100%,
       transparent 5.8rem
     );
     -webkit-mask-image: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 1) 65%,
-      rgba(0, 0, 0, 1) 100%,
+      var(--black-opaque) 65%,
+      var(--black-transparent) 100%,
       transparent 5.8rem
     );
     pointer-events: none;
@@ -104,9 +116,27 @@
     opacity: 1;
   }
 
+  .scroll-to-top-button {
+    @apply fixed top-4 right-4 z-50 rounded-full border p-2 shadow-lg transition-opacity duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+    background-color: var(--bg-color);
+    border-color: #e1e5e9;
+    color: #818589;
+    box-shadow: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -2px var(--shadow-color);
+    --tw-ring-color: var(--focus-color);
+  }
+  .scroll-to-top-button:hover {
+    color: var(--focus-color);
+  }
+
   @media (min-width: 1024px) {
     .mobile-sticky-header-blur {
-      display: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+    /* Keep button aligned with the content column (550px sidebar + 32px padding + 680px content = 1262px).
+       On wider viewports, push right inward so the button stays ~1rem inside the content right edge. */
+    .scroll-to-top-button {
+      right: max(1rem, calc(100vw - 1246px));
     }
   }
 }

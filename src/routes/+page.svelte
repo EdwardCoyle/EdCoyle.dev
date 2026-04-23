@@ -94,12 +94,12 @@
         // Sticky detection via IntersectionObserver.
         // Each sentinel sits just above the sticky header in normal flow.
         // When it scrolls out of view above the top edge, the header is stuck.
-        const makeStickyObserver = (setter: (stuck: boolean) => void) =>
+        const makeStickyObserver = (setter: (stuck: boolean) => void, root?: Element | null) =>
             new IntersectionObserver(
                 ([entry]) => {
                     setter(!entry.isIntersecting && entry.boundingClientRect.top < 1);
                 },
-                { threshold: 0, rootMargin: '0px 0px 0px 0px' }
+                { threshold: 0, rootMargin: '0px 0px 0px 0px', root: root ?? null }
             );
 
         const observers: IntersectionObserver[] = [];
@@ -112,9 +112,16 @@
 
         for (const [el, setter] of stickyPairs) {
             if (!el) continue;
-            const obs = makeStickyObserver(setter);
-            obs.observe(el);
-            observers.push(obs);
+            // viewport-based observer (mobile: homeEl scrolls, sentinels move through viewport)
+            const obsViewport = makeStickyObserver(setter);
+            obsViewport.observe(el);
+            observers.push(obsViewport);
+            // mainEl-based observer (desktop: mainEl scrolls, viewport is static)
+            if (mainEl) {
+                const obsMain = makeStickyObserver(setter, mainEl);
+                obsMain.observe(el);
+                observers.push(obsMain);
+            }
         }
 
         return () => {
@@ -158,9 +165,14 @@
     </div>
     <main bind:this={mainEl} class="scroll-smooth h-full w-full lg:w-oppo550 lg:overflow-x-hidden lg:overflow-y-auto">
         <MobileScrollProgress progress={scrollProgress} />
-        <div class="lg:p-8">
+
+        <div class="content-area-container relative">
+            <div class="absolute top-4 z-50 h-0 overflow-visible flex justify-end pr-4 lg:pr-8 max-w-680">
+                <ScrollToTopButton visible={showScrollToTop} on:click={scrollToTop} />
+            </div>
+
             <!-- About -->
-            <section id="about" aria-label="About" class="scroll-mt-28">
+            <section id="about" aria-label="About" class="scroll-mt-0">
                 <div bind:this={aboutStickyTrigger} class="h-px -mb-px" aria-hidden="true"></div>
                 <div class:is-stuck={aboutHeaderStuck} class="mobile-sticky-header">
                     <div class="mobile-sticky-header-blur" aria-hidden="true"></div>
@@ -175,7 +187,7 @@
             </section>
 
             <!-- Work Experience -->
-            <section id="work" aria-label="Work Experience" class="scroll-mt-28">
+            <section id="work" aria-label="Work Experience" class="scroll-mt-0">
                 <div bind:this={workStickyTrigger} class="h-px -mb-px" aria-hidden="true"></div>
                 <div class:is-stuck={workHeaderStuck} class="mobile-sticky-header">
                     <div class="mobile-sticky-header-blur" aria-hidden="true"></div>
@@ -265,7 +277,7 @@
             </section>
 
             <!-- Past Projects -->
-            <section id="projects" aria-label="Projects" class="scroll-mt-28">
+            <section id="projects" aria-label="Projects" class="scroll-mt-0">
                 <div bind:this={projectsStickyTrigger} class="h-px -mb-px" aria-hidden="true"></div>
                 <div class:is-stuck={projectsHeaderStuck} class="mobile-sticky-header">
                     <div class="mobile-sticky-header-blur" aria-hidden="true"></div>
@@ -472,10 +484,9 @@
                 </ContentCard>
             </section>
 
-            <section id="copyright" aria-label="Copyright" class="pb-16 lg:pb-0">
+            <section id="copyright" aria-label="Copyright" class="pb-4 lg:pb-0">
                 <AccentHeader footer>{ copyright() }</AccentHeader>    
             </section>
         </div>
-        <ScrollToTopButton visible={showScrollToTop} on:click={scrollToTop} />
     </main>
 </div>
