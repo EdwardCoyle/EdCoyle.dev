@@ -58,3 +58,55 @@
     @apply text-ecOrangeHighlight;
   }
 }
+
+@layer components {
+  .header-logo {
+    @apply w-full max-w-32r;
+  }
+
+  .mobile-sticky-header {
+    @apply sticky top-0 z-30 -mx-4 px-4 pt-4 lg:static lg:m-0 lg:p-0;
+    overflow: visible;
+  }
+
+  .mobile-sticky-header > *:not(.mobile-sticky-header-blur) {
+    position: relative;
+    z-index: 1;
+  }
+
+  .mobile-sticky-header-blur {
+    position: absolute;
+    inset: 0 -0.75rem -2.5rem;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 1) 65%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1) 65%,
+      rgba(0, 0, 0, 1) 100%,
+      transparent 5.8rem
+    );
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1) 65%,
+      rgba(0, 0, 0, 1) 100%,
+      transparent 5.8rem
+    );
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 140ms ease-out;
+    z-index: 0;
+  }
+
+  .mobile-sticky-header.is-stuck .mobile-sticky-header-blur {
+    opacity: 1;
+  }
+
+  @media (min-width: 1024px) {
+    .mobile-sticky-header-blur {
+      display: none;
+    }
+  }
+}

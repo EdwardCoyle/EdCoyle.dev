@@ -1,4 +1,5 @@
-<script>
+<script lang="ts">
+    import { onMount } from 'svelte';
 	import logo from '$lib/img/epc_logo_full.svg';
 
     import thumbnailIdsWeb from '$lib/img/thumbnails/ids-enterprise-wc.png';
@@ -26,6 +27,89 @@
 	import PillList from '../components/PillList.svelte';
 	import AccentHeader from '../components/AccentHeader.svelte';
 	import ContentCard from '../components/ContentCard.svelte';
+    import MobileScrollProgress from '../components/MobileScrollProgress.svelte';
+    import ScrollToTopButton from '../components/ScrollToTopButton.svelte';
+
+    const mobileBreakpoint = 1024;
+
+    let aboutStickyTrigger: HTMLDivElement;
+    let workStickyTrigger: HTMLDivElement;
+    let projectsStickyTrigger: HTMLDivElement;
+    let scrollProgress = 0;
+    let showScrollToTop = false;
+    let aboutHeaderStuck = false;
+    let workHeaderStuck = false;
+    let projectsHeaderStuck = false;
+
+    function clamp(value: number, min: number, max: number) {
+        return Math.min(Math.max(value, min), max);
+    }
+
+    function updateScrollProgress() {
+        if (window.innerWidth >= mobileBreakpoint) {
+            scrollProgress = 0;
+            showScrollToTop = false;
+            return;
+        }
+
+        const scrollTop = window.scrollY || document.documentElement.scrollTop || 0;
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+        scrollProgress = scrollHeight > 0 ? clamp((scrollTop / scrollHeight) * 100, 0, 100) : 0;
+        showScrollToTop = scrollTop > window.innerHeight * 0.9;
+    }
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    onMount(() => {
+        // Scroll progress and scroll-to-top button
+        let ticking = false;
+        const scheduleUpdate = () => {
+            if (ticking) return;
+            ticking = true;
+            window.requestAnimationFrame(() => {
+                ticking = false;
+                updateScrollProgress();
+            });
+        };
+        scheduleUpdate();
+        window.addEventListener('scroll', scheduleUpdate, { passive: true });
+        window.addEventListener('resize', scheduleUpdate);
+
+        // Sticky detection via IntersectionObserver.
+        // Each sentinel sits just above the sticky header in normal flow.
+        // When it scrolls out of view above the top edge, the header is stuck.
+        const makeStickyObserver = (setter: (stuck: boolean) => void) =>
+            new IntersectionObserver(
+                ([entry]) => {
+                    setter(!entry.isIntersecting && entry.boundingClientRect.top < 1);
+                },
+                { threshold: 0, rootMargin: '0px 0px 0px 0px' }
+            );
+
+        const observers: IntersectionObserver[] = [];
+
+        const stickyPairs: [HTMLDivElement, (v: boolean) => void][] = [
+            [aboutStickyTrigger,    (v) => (aboutHeaderStuck    = v)],
+            [workStickyTrigger,     (v) => (workHeaderStuck     = v)],
+            [projectsStickyTrigger, (v) => (projectsHeaderStuck = v)],
+        ];
+
+        for (const [el, setter] of stickyPairs) {
+            if (!el) continue;
+            const obs = makeStickyObserver(setter);
+            obs.observe(el);
+            observers.push(obs);
+        }
+
+        return () => {
+            window.removeEventListener('scroll', scheduleUpdate);
+            window.removeEventListener('resize', scheduleUpdate);
+            observers.forEach((o) => o.disconnect());
+        };
+    });
 
     const copyright = () => { 
         const year = new Date().getFullYear();
@@ -33,13 +117,13 @@
     }
 </script>
 
-<div id="content" class="flex flex-col lg:flex-row h-full w-full overflow-auto lg:overflow-hidden">
-    <div class="w-full h-full lg:w-550">
-        <div class="flex flex-col h-full p-8">
+<div id="home" class="flex h-full w-full flex-col overflow-auto lg:flex-row lg:overflow-hidden">
+    <div class="h-full w-full lg:w-550">
+        <div class="flex h-full flex-col p-8">
             <header class="mb-8">
                 <h1>
                     <a href="#home">
-                        <img class="max-w-32r" src={logo} alt="Edward Coyle. Developer. Designer. Animator." />
+                        <img class="header-logo" src={logo} alt="Edward Coyle. Developer. Designer. Animator." />
                     </a>
                 </h1>
             </header>
@@ -47,23 +131,28 @@
                 <p class="tagline">I am a seasoned front-end developer who loves designing fun and accessible experiences</p>
             </div>
             <ul class="mb-8 max-lg:hidden">
-                <li class="flex flex-row gap-2 items-center"><Triangle></Triangle><a class="link" href="#about">About Me</a></li>
-                <li class="flex flex-row gap-2 items-center"><Triangle></Triangle><a class="link" href="#work">Work Experience</a></li>
-                <li class="flex flex-row gap-2 items-center"><Triangle></Triangle><a class="link" href="#projects">Past Projects</a></li>
+                <li class="flex flex-row items-center gap-2"><Triangle></Triangle><a class="link" href="#about">About Me</a></li>
+                <li class="flex flex-row items-center gap-2"><Triangle></Triangle><a class="link" href="#work">Work Experience</a></li>
+                <li class="flex flex-row items-center gap-2"><Triangle></Triangle><a class="link" href="#projects">Past Projects</a></li>
             </ul>
-            <div class="lg:mt-auto flex gap-2 mb-8 lg:mb-0">
-                <a class="link" href="https://github.com/EdwardCoyle"><Github/></a>
-                <a class="link" href="https://linkedin.com/in/edwardcoylejr"><LinkedIn/></a>
+            <div class="mb-8 flex gap-2 lg:mb-0 lg:mt-auto">
+                <a class="link" href="https://github.com/EdwardCoyle"><Github /></a>
+                <a class="link" href="https://linkedin.com/in/edwardcoylejr"><LinkedIn /></a>
             </div>
         </div>
     </div>
-    <main class="h-full w-full lg:w-oppo550 lg:overflow-y-auto lg:overflow-x-hidden scroll-smooth">
+    <main class="scroll-smooth h-full w-full lg:w-oppo550 lg:overflow-x-hidden lg:overflow-y-auto">
+        <MobileScrollProgress progress={scrollProgress} />
         <div class="lg:p-8">
             <!-- About -->
-            <section id="about" aria-label="About">
-                <AccentHeader>About Me</AccentHeader>
+            <section id="about" aria-label="About" class="scroll-mt-28">
+                <div bind:this={aboutStickyTrigger} class="h-px -mb-px" aria-hidden="true"></div>
+                <div class:is-stuck={aboutHeaderStuck} class="mobile-sticky-header">
+                    <div class="mobile-sticky-header-blur" aria-hidden="true"></div>
+                    <AccentHeader>About Me</AccentHeader>
+                </div>
                 <ContentCard>
-                    <p class="mb-8 text-md">My interest in tech started early, writing little experiments in the <a class="link" href="https://museumofzzt.com/">ZZT OOP language</a> on my parents' i386 DOS/Windows machine. Since then, I've been drawn to the space where code and visuals overlap, spending plenty of time tinkering with programming languages, pixel art tools, and whatever else looked interesting enough to turn into something real.</p>
+                    <p class="mb-8 text-md">My interest in tech started early, writing little experiments in the <a class="link" href="https://en.wikibooks.org/wiki/ZZT-OOP/Introduction">ZZT OOP language</a> on my parents' i386 DOS/Windows machine. Since then, I've been drawn to the space where code and visuals overlap, spending plenty of time tinkering with programming languages, pixel art tools, and whatever else looked interesting enough to turn into something real.</p>
                     <p class="mb-8 text-md">Today, I’m a Software Engineer focused on building user experiences that feel polished, expressive, and practical. Most recently, I worked on the <a class="link" href="https://design.infor.com/">Infor Design System</a>, helping turn a large portion of the system into TypeScript-based Web Components used across the company’s application teams.</p>
                     <p class="mb-8 text-md">My background spans enterprise application development, motion graphics, video editing and post-production, and character animation. I earned a bachelor’s degree in Media Arts &amp; Animation from The Art Institute of Philadelphia, with a focus in 3D Animation. Along the way, I’ve also worked on side projects involving programming and art direction for <a class="link" href="https://thegamespage.com">iOS and Windows games</a>, which has given my career a mix of technical depth and creative range.</p>
                     <p class="mb-8 text-md">I’m always interested in opportunities to make thoughtful, creative work with good people. If that sounds like your kind of project, <a class="link" href="mailto:edcoyle86@gmail.com">get in touch</a>.</p>
@@ -71,8 +160,12 @@
             </section>
 
             <!-- Work Experience -->
-            <section  id="work" aria-label="Work Experience">
-                <AccentHeader>Work Experience</AccentHeader>
+            <section id="work" aria-label="Work Experience" class="scroll-mt-28">
+                <div bind:this={workStickyTrigger} class="h-px -mb-px" aria-hidden="true"></div>
+                <div class:is-stuck={workHeaderStuck} class="mobile-sticky-header">
+                    <div class="mobile-sticky-header-blur" aria-hidden="true"></div>
+                    <AccentHeader>Work Experience</AccentHeader>
+                </div>
                 <!-- Schneider -->
                 <ContentCard>
                     <ContentGrid>      
@@ -157,8 +250,12 @@
             </section>
 
             <!-- Past Projects -->
-            <section id="projects" aria-label="Projects">
-                <AccentHeader>Past Projects</AccentHeader>
+            <section id="projects" aria-label="Projects" class="scroll-mt-28">
+                <div bind:this={projectsStickyTrigger} class="h-px -mb-px" aria-hidden="true"></div>
+                <div class:is-stuck={projectsHeaderStuck} class="mobile-sticky-header">
+                    <div class="mobile-sticky-header-blur" aria-hidden="true"></div>
+                    <AccentHeader>Past Projects</AccentHeader>
+                </div>
                 <ContentCard>
                     <ContentGrid>
                         <!-- OP Patient Portal -->
@@ -359,5 +456,6 @@
                 <AccentHeader footer>{ copyright() }</AccentHeader>    
             </section>
         </div>
+        <ScrollToTopButton visible={showScrollToTop} on:click={scrollToTop} />
     </main>
 </div>

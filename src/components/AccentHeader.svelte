@@ -5,7 +5,7 @@
     export let offset = true;
 </script>
 
-<header class="flex flex-row items-center mb-8 gap-4 overflow-hidden text-start max-w-680 lg:w-680">
+<header class="flex flex-row items-center gap-4 overflow-hidden text-start max-w-680 lg:w-680 lg:mb-8">
     <ThinAccent offset={offset}/>
     {#if footer}
         <span class="whitespace-nowrap flex-grow-0 font-semibold font-serif">
